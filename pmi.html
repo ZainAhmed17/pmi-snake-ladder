@@ -1,0 +1,207 @@
+<html>
+ <head>
+  <link rel="stylesheet" type="text/css" href="pmistyle.css">
+ </head>
+<body>
+<div class="board">
+<div class="b1">
+  <!--white--><div class="r1c1"></div>
+  <!--path--><div class="r1c2">
+    <div class="c5">
+        <!--1st line-->
+    <div class="green">22</div>
+    <div class="green">21</div>
+    <div class="green">20</div>
+    <div class="green">19</div>
+    <div class="green">18</div>
+  </div>
+        <div class="c6">
+        <!--1st line-->
+    <div class="green">23</div>
+    <div class="red"></div>
+    <div class="red"></div>
+    <div class="red"></div>
+
+  </div>
+        <div class="c7">
+        <!--1st line-->
+    <div class="green">24</div>
+    <div class="red"></div>
+    <div class="red"></div>
+    <div class="red"></div>
+
+  </div>
+        <div class="c8">
+        <!--1st line-->
+    <div class="green">25</div>
+    <div class="green">26</div>
+    <div class="green">27</div>
+    <div class="green">28</div>
+    <div class="green">29</div>
+  </div>
+  </div>
+  <!--white--><div class="r1c3"></div>
+</div>
+
+<div class="b2">
+    <!--path--><div class="r2c1" >
+    <div class="c9">
+      <div class="green">13</div>
+      <div class="green">12</div>
+      <div class="green">11</div>
+      <div class="green">10</div>
+
+</div>
+ <div class="c10">
+      <div class="green">14</div>
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="green">9</div>
+       </div>
+       <div class="c11">
+      <div class="green">15</div>
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="green">8</div>
+       </div>
+       <div class="c12">
+      <div class="green">16</div>
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="green">7</div>
+       </div>
+          <div class="c13">
+      <div class="green">17</div>
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="green">6</div>
+       </div>
+    </div>
+  <!--path--><div class="r2c2">
+<div class="c19">
+      <div class="green">31</div>
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="green">40</div>
+       </div>
+       <div class="c20">
+      <div class="red">32</div>
+      <div class="red">
+             <div class="rect"></div></div>
+      <div class="red"></div>
+      <div class="red">39</div>
+       </div>
+       <div class="c21">
+      <div class="red">33</div>
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="green">38</div>
+       </div>
+          <div class="c22">
+      <div class="green">34</div>
+      <div class="red">35</div>
+      <div class="red">36</div>
+      <div class="green">37</div>
+       </div>
+
+
+  </div>
+  <!--path--><div class="r2c3">
+     <div class="c14">
+      <div class="green">30</div>
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="green">41</div>
+
+</div>
+ <div class="c15">
+      <div class="green">31</div>
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="green">40</div>
+       </div>
+       <div class="c16">
+      <div class="green">32</div>
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="green">39</div>
+       </div>
+       <div class="c17">
+      <div class="green">33</div>
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="green">38</div>
+       </div>
+          <div class="c18">
+      <div class="green">34</div>
+      <div class="green">35</div>
+      <div class="green">36</div>
+      <div class="green">37</div>
+       </div>
+  </div>
+</div>
+<div class="b3">
+      <!--white--><div class="r3c1">
+        <div class="dice">
+         <img src="/Users/zainahmed/Desktop/pmi game/dice images/dice2.jpg" width="50" height="60" id="check">
+        </div>
+        </div>
+  <!--white--><div class="r3c2">
+    <div class="c1">
+        <!--1st line-->
+    <div class="green">4</div>
+    <div class="green">3</div>
+    <div class="green">2</div>
+    <div class="green">1</div>
+    <div class="orange" >ST
+    <div class="square">
+  </div>
+    </div>
+  </div>
+  <div class="c2">
+    <!--2nd line-->
+     <div class="red"></div>
+    <div class="red"></div>
+    <div class="red"></div>
+    <div class="orange">ART</div>
+    </div>
+    <div class="c3">
+    <!--3rd line-->
+     <div class="green">49</div>
+    <div class="green">48</div>
+    <div class="green">47</div>
+    <div class="green">46</div>
+
+    </div>
+    <div class="c4">
+    <!--4th line-->
+     <div class="green">42</div>
+     <div class="green">43</div>
+    <div class="green">44</div>
+    <div class="green">45</div>
+
+    </div>
+
+  </div>
+  <!--white--><div class="r3c3">
+  <button type="button" onclick="gamedice()">dice</button>
+
+  </div>
+</div>
+</div>
+
+<script>
+  function insertSquare(){
+  var square = document.getElementById("square");
+insertSquare();
+
+ gamedice = () => {
+var player = Math.floor(Math.random() * 6) + 1;
+var playerdice = "/Users/zainahmed/Desktop/pmi game/dice images/dice`${player}`.jpg";
+document.getElementById('check').setAttribute('src',playerdice);
+}
+
+
+</script>
+</body>
+</html>

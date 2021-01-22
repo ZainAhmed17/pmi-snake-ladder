@@ -1,0 +1,239 @@
+*,*: before, *: after{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+.board{
+ height: 300px;
+ width: 300px;
+ margin: 10px auto;
+ cursor: pointer;
+ }
+ .b1,.b2,.b3{
+   width: 300px;
+   height: 100px;
+   display: flex;
+ }
+ .r1c1,.r1c3,.r3c1,.r3c3{
+   width: 100px;
+   height: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+ }
+.r1c2,.r3c2{
+ width: 100px;
+ height: 100px;
+ display: flex;
+ border: 1px solid #000;
+}
+.r2c1,.r2c3{
+ width: 100px;
+ height: 100px;
+ display: flex;
+ border: 1px solid #000;
+
+}
+.r2c2{
+  width: 100px;
+ height: 100px;
+ display: flex;
+ border: 1px solid #000;
+
+}
+.red{
+ background-color: #dc2418;
+}
+.green{
+ background-color: #84c21f;
+}
+.orange{
+  background-color: orange;
+}
+ .c1 > div {
+   width: 23px;
+   height: 18px;
+float: left;
+   border: 1px solid #000;
+ }
+   .c2 > div {
+   width: 23px;
+   height: 23px;
+  float: left;
+   border: 1px solid #000;
+ }
+  .c3 > div {
+   width: 23px;
+   height: 23px;
+  float: left;
+   border: 1px solid #000;
+ }
+  .c4 > div {
+   width: 23px;
+   height: 23px;
+  float: left;
+   border: 1px solid #000;
+ }
+  .c5 > div {
+   width: 23px;
+   height: 18px;
+  float: left;
+   border: 1px solid #000;
+ }
+    .c6 > div {
+   width: 23px;
+   height:  23px;
+  float: left;
+   border: 1px solid #000;
+ }
+    .c7 > div {
+   width: 23px;
+   height:  23px;
+  float: left;
+   border: 1px solid #000;
+ }
+    .c8 > div {
+   width: 23px;
+   height:  18px;
+  float: left;
+   border: 1px solid #000;
+ }
+ .c9>div{
+   height: 23px;
+   width:  17.5px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+ .c10>div{
+   height: 23px;
+   width:  17.5px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+   .c11>div{
+   height: 23px;
+   width:  17.5px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+   .c12>div{
+   height: 23px;
+   width:  17.5px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+     .c13>div{
+   height: 23px;
+   width:  18px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+   .c14>div{
+   height: 23px;
+   width:  17.5px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+   .c15>div{
+   height: 23px;
+   width:  17.5px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+   .c16>div{
+   height: 23px;
+   width:  17.5px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+     .c17>div{
+   height: 23px;
+   width:  17.5px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+ .c19>div{
+   height: 23px;
+   width:  23px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+   .c20>div{
+   height: 23px;
+   width:  23px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+   .c21>div{
+   height: 23px;
+   width:  23px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+     .c22>div{
+   height: 23px;
+   width:  23px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+       .c18>div{
+   height: 23px;
+   width:  18px;
+  float:left;
+   border: 1px solid #000;
+
+
+ }
+
+
+.square{
+ width: 5px;
+ height: 5px;
+ float:left;
+ background: blue;
+}
+.dice{
+align-items: center;
+ float:left;
+}
+.rect{
+  width: 5px;
+  height: 5px;
+  align-items:center;
+  float:right;
+  padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+   background-color: yellow;
+
+
+}
