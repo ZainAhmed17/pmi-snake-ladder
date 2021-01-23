@@ -222,6 +222,13 @@ float: left;
  float:left;
  background: blue;
 }
+
+.square1{
+ width: 5px;
+ height: 5px;
+ float:left;
+ background: white;
+}
 .dice{
 align-items: center;
  float:left;
