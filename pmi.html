@@ -3,7 +3,10 @@
   <link rel="stylesheet" type="text/css" href="pmistyle.css">
  </head>
 <body>
-  <div id="dicePosition">g1</div>
+  <button style="background-color:#DD5E89;width:100px;height:50px;"><div id="dicePosition">g1</div></button>
+  <button style="background-color:#DD5E89;width:100px;height:50px;"><div id="dicePositionRed">r1</div></button>
+  <button style="background-color:#DD5E89;width:100px;height:50px;"><div id="currentTurn">GREEN</div></button>
+    <button style="background-color:#DD5E89;width:100px;height:50px;"><div id="snakePlot"></div></button>
 <div class="board">
 <div class="b1">
   <!--white--><div class="r1c1"></div>
@@ -140,14 +143,15 @@
     <div class="green" id="g4">4</div>
     <div class="green" id="g3">3</div>
     <div class="green" id="g2">2</div>
-    <div class="orange"  id="g1">ST1<div class="square"></div></div>
+    <div class="orange"  id="g1">START
+      <div class="square"></div></div>
   </div>
   <div class="c2">
     <!--2nd line-->
      <div class="red" id="r4">4</div>
     <div class="red" id="r3">3</div>
     <div class="red" id="r2">2</div>
-    <div class="orange" id="r1">ART
+    <div class="orange" id="r1">
       <div class="square1">
      </div>
     </div>
@@ -171,7 +175,7 @@
 
   </div>
   <!--white--><div class="r3c3">
-  <button type="button" onclick="gamedice()">dice</button>
+  <button type="button" onclick="gamedice()" style="background-color:black;width:100px;height:50px;color:white;">dice</button>
 
   </div>
 </div>
@@ -181,9 +185,19 @@
 //   function insertSquare(){
 //   var square = document.getElementById("square");
 // }
- function gamedice() {
-console.log('here',document.getElementById("dicePosition"))
-var player = Math.floor(Math.random()*6 +1);
+var turn = 1;
+var snakeHeadGreen = [8,26,37,49];
+var snakeTailGreen = [7,24,34,45];
+var snakeHeadRed = [5,11,21,24,27,29];
+var snakeTailRed = [3,8,15,16,20,13];
+var colors = ["blue","white","grey","purple","orage","pink","#00FF00","#99CCFF","#FFCC99"]
+//Math.floor(Math.random()*6 +1);
+function gamedice() {
+  //let currentTurn = new XMLSerializer().serializeToString(document.getElementById("currentTurn").firstChild)
+let currentTurn = document.getElementById("currentTurn")
+currentTurn.innerHTML = "RED";
+var player = 2
+//Math.floor(Math.random()*6 +1);
 console.log(player)
 //var playerdice = "/Users/zainahmed/Desktop/pmi game/dice images/dice`${player}`.jpg";
 console.log(document.getElementById('dice'));
@@ -200,47 +214,205 @@ function movement(player){
   let currentPostion = new XMLSerializer().serializeToString(document.getElementById("dicePosition").firstChild)
     document.getElementById("dicePosition").innerHTML = currentPostion
 
-    if(moveValue != -1)
-        moveDice(moveValue,currentPostion)
+
+    if(turn%2==1){
+      let currentPostion = new XMLSerializer().serializeToString(document.getElementById("dicePosition").firstChild)
+      document.getElementById("dicePosition").innerHTML = currentPostion
+      let finalPosition  = parseInt(new XMLSerializer().serializeToString(document.getElementById("dicePosition").firstChild).slice(1));
+      console.log("finalPosition",finalPosition);
+      if(finalPosition+player > 49){
+        alert("GAME OVER Green");
+        return;
+      }
+
+      if(moveValue != -1)
+          movePawnGreen(player,currentPostion)
+    }
+    else{
+      let currentPostion = new XMLSerializer().serializeToString(document.getElementById("dicePositionRed").firstChild)
+      document.getElementById("dicePositionRed").innerHTML = currentPostion
+      let finalPosition  = parseInt(new XMLSerializer().serializeToString(document.getElementById("dicePositionRed").firstChild).slice(1));
+      console.log("finalPosition",finalPosition);
+      if(finalPosition+player > 29){
+        alert("GAME OVER RED");
+        return;
+      }
+      if(moveValue != -1)
+          movePawnRed(player,currentPostion)
+    }
 }
 
-function moveDice(move,currentPostion){
+function movePawnGreen(move,currentPostion){
   let squareDiv = document.createElement("DIV");
   squareDiv.className = "square"
   squareDiv.id = "bluePawan"
   let currentPostionValue = parseInt(currentPostion.replace(/[^0-9]/g,''));
-  console.log("curr",currentPostionValue);
+  console.log("curr",move);
+
   //console.log("curr",move,currentPostion.charAt(0)+(move+2))
   switch (move) {
     case 1:
-
-      console.log(currentPostionValue)
+      console.log('1 here')
+      document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue)).childNodes[1])
       document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
-      document.getElementById("dicePosition").innerHTML = "g"+new XMLSerializer().
-                                                            serializeToString(document.getElementsByClassName("square")[0]
-                                                                .parentElement.firstChild)
+      document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+1);
+      //"g"+new XMLSerializer().
+      //serializeToString(document.getElementsByClassName("square")[0]
+      //.parentElement.firstChild)
       break;
     case 2:
-    console.log("jump",document.getElementsByClassName("square")[0]
-        .parentElement)
+    console.log('2 here')
     let posDice = currentPostion.charAt(0)+(currentPostionValue+2);
     document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue)).childNodes[1])
       document.getElementById(posDice).appendChild(squareDiv);
       document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+2)
         break;
     case 3:
+        console.log("current",currentPostion)
+        if(currentPostion == 'g1')
+              return;
+        document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue)).childNodes[1])
         document.getElementById(currentPostion.charAt(0)+(currentPostionValue-1)).appendChild(squareDiv);
-        document.getElementById("dicePosition").innerHTML = "g"+new XMLSerializer().
-                                                              serializeToString(document.getElementsByClassName("square")[0]
-                                                                  .parentElement.firstChild)
+        document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue-1)
       break;
+    case 5:
+        console.log('5 here')
+        document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue)).childNodes[1])
+        document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
+        document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+1)
+        break;
+    case 4:
+        console.log('4 here')
+        document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue)).childNodes[1])
+        document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
+        document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+1)
+        break;
     default:
       null;
   }
+  let currentTurn = document.getElementById("currentTurn")
+  currentTurn.innerHTML = "RED";
+  turn++;
+}
+function movePawnRed(move,currentPostion){
+  let squareDiv = document.createElement("DIV");
+  squareDiv.className = "square1"
+  squareDiv.id = "whitePawan"
+  let currentPostionValue = parseInt(currentPostion.replace(/[^0-9]/g,''));
+  console.log("curr",move);
+  //console.log("curr",move,currentPostion.charAt(0)+(move+2))
+  switch (move) {
+    case 1:
+      console.log('1 here')
+      document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[1])
+      document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
+      document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+1);
+      //"g"+new XMLSerializer().
+      //serializeToString(document.getElementsByClassName("square")[0]
+      //.parentElement.firstChild)
+      break;
+    case 2:
+    console.log('2 here')
+    let posDice = currentPostion.charAt(0)+(currentPostionValue+2);
+    document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[1])
+      document.getElementById(posDice).appendChild(squareDiv);
+      document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+2)
+        break;
+    case 3:
+        console.log("current",currentPostion)
+        if(currentPostion == 'r1')
+              return;
+        document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[1])
+        document.getElementById(currentPostion.charAt(0)+(currentPostionValue-1)).appendChild(squareDiv);
+        document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue-1)
+      break;
+    case 5:
+        console.log('5 here')
+        document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[1])
+        document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
+        document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+1)
+        break;
+    case 4:
+        console.log('4 here')
+        document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[1])
+        document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
+        document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+1)
+        break;
+    default:
+      null;
+  }
+
+  let currentTurn = document.getElementById("currentTurn")
+  currentTurn.innerHTML = "GREEN";
+  turn++;
+}
+
+function createSnake(times,player){
+
+  for(let j = 0;j<times;j++){
+    if(player == 'GREEN')
+        plotSnake(snakeHeadGreen[j],snakeTailGreen[j],colors[j],player)
+    else
+        plotSnake(snakeHeadRed[j],snakeTailRed[j],colors[j],player)
+  }
+
+}
+
+function plotSnake(x,y,color,player){
+  let snakeH = document.createElement("DIV");
+  snakeH.className = "snake"
+  snakeH.innerHTML = "H"
+  snakeH.id = "bluePawan"
+  snakeH.style.background = color;
+  let snakeT = document.createElement("DIV");
+  snakeT.className = "snake"
+  snakeT.innerHTML = "T"
+  snakeT.id = "bluePawan"
+  snakeT.style.background = color;
+
+  let box;
+
+  if(player == 'GREEN')
+      box = 'g';
+  else
+      box = 'r'
+
+  console.log('checking',box+x)
+  document.getElementById(box+x).appendChild(snakeH)
+  document.getElementById(box+y).appendChild(snakeT)
+
+}
+
+function moveSnakesGreen(move){
+  let squareDiv = document.createElement("DIV");
+  squareDiv.className = "square"
+  squareDiv.id = "bluePawan"
+  let snakeX = getCords();
+  let snakeY = getCords();
+  let head;
+  let tail;
+
+  if(snakeX > snakeY){
+      head = 'g'+snakeX;
+      tail = 'g'+snakeY
+    }else{
+      tail = 'g'+snakeX;
+      head = 'g'+snakeY;
+    }
+
+    if(move == head){
+      document.getElementById("dicePosition").
+              removeChild(document.getElementById("dicePosition").childNodes[1])
+      document.getElementById(tail).appendChild(squareDiv);
+    }
+
+    snakeHead = [];
+    snakeTail = [];
+
 }
 
 function defineMoves(move){
-  if(move == 1 || move == 3 || move == 6)
+  if(move == 1 || move == 3 || move == 5)
       return 1;
 
    if(move == 2 || move == 4)
@@ -248,7 +420,8 @@ function defineMoves(move){
 
   return -1;
 }
-
+createSnake(4,'GREEN')
+createSnake(6,'RED')
 </script>
 </body>
 </html>

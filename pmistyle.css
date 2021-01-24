@@ -1,226 +1,237 @@
+body{
+  background-image: linear-gradient(to right, #c94b4b , #4b134f);
+}
+
 *,*: before, *: after{
  margin: 0;
  padding: 0;
  box-sizing: border-box;
  }
 .board{
- height: 300px;
- width: 300px;
+ height: 900px;
+ width: 900px;
  margin: 10px auto;
  cursor: pointer;
  }
  .b1,.b2,.b3{
-   width: 300px;
-   height: 100px;
+   width: 900px;
+   height: 300px;
    display: flex;
  }
  .r1c1,.r1c3,.r3c1,.r3c3{
-   width: 100px;
-   height: 100px;
+   width: 300px;
+   height: 300px;
    display: flex;
    align-items: center;
    justify-content: center;
 
  }
 .r1c2,.r3c2{
- width: 100px;
- height: 100px;
+ width: 300px;
+ height: 300px;
  display: flex;
  border: 1px solid #000;
 }
 .r2c1,.r2c3{
- width: 100px;
- height: 100px;
+ width: 300px;
+ height: 300px;
  display: flex;
  border: 1px solid #000;
 
 }
 .r2c2{
-  width: 100px;
- height: 100px;
+  width: 300px;
+ height: 300px;
  display: flex;
  border: 1px solid #000;
 
 }
 .red{
- background-color: #dc2418;
+ background-color: #dd1818;
 }
 .green{
- background-color: #9ACD32;
+ background-color: #45a247;
 }
 .orange{
-  background-color: orange;
+  background-color: #F16529;
 }
 .yellow{
-  background-color: yellow;
+  background-color: #f8b500;
 }
  .c1 > div {
-   width: 23px;
-   height: 23px;
+   width: 73px;
+   height: 73px;
 float: left;
    border: 1px solid #000;
  }
    .c2 > div {
-   width: 23px;
-   height: 23px;
+   width: 73px;
+   height: 73px;
   float: left;
    border: 1px solid #000;
  }
   .c3 > div {
-   width: 23px;
-   height: 23px;
+   width: 73px;
+   height: 73px;
   float: left;
    border: 1px solid #000;
  }
   .c4 > div {
-   width: 23px;
-   height: 23px;
+   width: 73px;
+   height: 73px;
   float: left;
    border: 1px solid #000;
  }
   .c5 > div {
-   width: 23px;
-   height: 18px;
+   width: 73px;
+   height: 58px;
   float: left;
    border: 1px solid #000;
  }
     .c6 > div {
-   width: 23px;
-   height:  23px;
+   width: 73px;
+   height:  73px;
   float: left;
    border: 1px solid #000;
  }
     .c7 > div {
-   width: 23px;
-   height:  23px;
+   width: 73px;
+   height:  73px;
   float: left;
    border: 1px solid #000;
  }
     .c8 > div {
-   width: 23px;
-   height:  18px;
+   width:73px;
+   height: 58px;
   float: left;
    border: 1px solid #000;
  }
  .c9>div{
-   height: 23px;
-   width:  17.5px;
+   height:73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
  .c10>div{
-   height: 23px;
-   width:  22px;
+   height:73px;
+   width: 73px;
   float:left;
    border: 1px solid #000;
 
 
  }
    .c11>div{
-   height: 23px;
-   width:  22px;
+   height:73px;
+   width: 73px;
   float:left;
    border: 1px solid #000;
 
 
  }
    .c12>div{
-   height: 23px;
-   width:  22px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
      .c13>div{
-   height: 23px;
-   width:  22px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
    .c14>div{
-   height: 23px;
-   width:  23px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
    .c15>div{
-   height: 23px;
-   width:  23px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
    .c16>div{
-   height: 23px;
-   width:  23px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
      .c17>div{
-   height: 23px;
-   width:  23px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
  .c19>div{
-   height: 23px;
-   width:  23px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
    .c20>div{
-   height: 23px;
-   width:  23px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
    .c21>div{
-   height: 23px;
-   width:  23px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
      .c22>div{
-   height: 23px;
-   width:  23px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
        .c18>div{
-   height: 23px;
-   width:  18px;
+   height: 73px;
+   width:  73px;
   float:left;
    border: 1px solid #000;
 
 
  }
 
+ .snake{
+  width: 50px;
+  height: 50px;
+  float:left;
+ }
 
 .square{
- width: 5px;
- height: 5px;
+ width: 50px;
+ height: 50px;
  float:left;
- background: blue;
+ /* background: blue; */
+ background-image: url("dice_images/player1.png");
+ background-color: #cccccc;
 }
 
 .square1{
@@ -232,6 +243,7 @@ float: left;
 .dice{
 align-items: center;
  float:left;
+ background-color: #2C5364;
 }
 .rect{
   width: 5px;
@@ -246,4 +258,17 @@ align-items: center;
    background-color: yellow;
 
 
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: blue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
