@@ -144,7 +144,7 @@
     <div class="green" id="g3">3</div>
     <div class="green" id="g2">2</div>
     <div class="orange"  id="g1">START
-      <div class="square"></div></div>
+      <div class="square" id="bluePawan"></div></div>
   </div>
   <div class="c2">
     <!--2nd line-->
@@ -152,7 +152,7 @@
     <div class="red" id="r3">3</div>
     <div class="red" id="r2">2</div>
     <div class="orange" id="r1">
-      <div class="square1">
+      <div class="square1" id="whitePawan">
      </div>
     </div>
     </div>
@@ -261,9 +261,16 @@ function movePawnGreen(move,currentPostion){
       //.parentElement.firstChild)
       break;
     case 2:
-    console.log('2 here')
+    let remove;
+    console.log('my child',document.getElementById("g"+(currentPostionValue)).childNodes[1].id)
+    console.log("my data",document.getElementById("g"+(currentPostionValue)))
+    if("g"+(currentPostionValue).id != 'whitePawan')
+      remove = 2
+    else
+      remove = 1
     let posDice = currentPostion.charAt(0)+(currentPostionValue+2);
-    document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue)).childNodes[1])
+    document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue))
+                              .childNodes[remove])
       document.getElementById(posDice).appendChild(squareDiv);
       document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+2)
         break;
@@ -312,9 +319,9 @@ function movePawnRed(move,currentPostion){
       //.parentElement.firstChild)
       break;
     case 2:
-    console.log('2 here')
     let posDice = currentPostion.charAt(0)+(currentPostionValue+2);
-    document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[1])
+    document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue))
+                                .childNodes[1])
       document.getElementById(posDice).appendChild(squareDiv);
       document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+2)
         break;
@@ -362,12 +369,10 @@ function plotSnake(x,y,color,player){
   let snakeH = document.createElement("DIV");
   snakeH.className = "snake"
   snakeH.innerHTML = "H"
-  snakeH.id = "bluePawan"
   snakeH.style.background = color;
   let snakeT = document.createElement("DIV");
   snakeT.className = "snake"
   snakeT.innerHTML = "T"
-  snakeT.id = "bluePawan"
   snakeT.style.background = color;
 
   let box;
