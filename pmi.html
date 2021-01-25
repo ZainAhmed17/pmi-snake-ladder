@@ -252,7 +252,7 @@ function movePawnGreen(move,currentPostion){
     remove = 1
   switch (move) {
     case 1:
-      if(moveSnakesGreen('GREEN',currentPostionValue+1,squareDiv) == 1){
+      if(moveSnakes('GREEN',currentPostionValue+1,squareDiv) == 1){
         turn++;
         return;
       }
@@ -261,7 +261,7 @@ function movePawnGreen(move,currentPostion){
       document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+1);
       break;
     case 2:
-    if(moveSnakesGreen('GREEN',currentPostionValue+1,squareDiv)==1){
+    if(moveSnakes('GREEN',currentPostionValue+2,squareDiv)==1){
       turn++;
       return;
     }
@@ -272,7 +272,7 @@ function movePawnGreen(move,currentPostion){
       document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+2)
         break;
     case 3:
-    if(moveSnakesGreen('GREEN',currentPostionValue+1,squareDiv) == 1){
+    if(moveSnakes('GREEN',currentPostionValue-1,squareDiv) == 1){
       turn++;
       return;
     }
@@ -283,7 +283,7 @@ function movePawnGreen(move,currentPostion){
         document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue-1)
       break;
     case 5:
-    if(moveSnakesGreen('GREEN',currentPostionValue+1,squareDiv) == 1){
+    if(moveSnakes('GREEN',currentPostionValue+1,squareDiv) == 1){
       turn++;
       return;
     }
@@ -293,7 +293,7 @@ function movePawnGreen(move,currentPostion){
         document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+1)
         break;
     case 4:
-    if(moveSnakesGreen('GREEN',currentPostionValue+1,squareDiv) == 1){
+    if(moveSnakes('GREEN',currentPostionValue+1,squareDiv) == 1){
       turn++;
       return;
     }
@@ -320,7 +320,10 @@ function movePawnRed(move,currentPostion){
     remove = 1
   switch (move) {
     case 1:
-      console.log('1 here')
+    if(moveSnakes('RED',currentPostionValue+1,squareDiv) == 1){
+      turn++;
+      return;
+    }
       document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[remove])
       document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
       document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+1);
@@ -329,6 +332,10 @@ function movePawnRed(move,currentPostion){
       //.parentElement.firstChild)
       break;
     case 2:
+    if(moveSnakes('RED',currentPostionValue+2,squareDiv) == 1){
+      turn++;
+      return;
+    }
     let posDice = currentPostion.charAt(0)+(currentPostionValue+2);
     document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue))
                                 .childNodes[remove])
@@ -336,7 +343,10 @@ function movePawnRed(move,currentPostion){
       document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+2)
         break;
     case 3:
-        console.log("current",currentPostion)
+    if(moveSnakes('RED',currentPostionValue-1,squareDiv) == 1){
+      turn++;
+      return;
+    }
         if(currentPostion == 'r1')
               return;
         document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[remove])
@@ -344,13 +354,19 @@ function movePawnRed(move,currentPostion){
         document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue-1)
       break;
     case 5:
-        console.log('5 here')
+    if(moveSnakes('RED',currentPostionValue+1,squareDiv) == 1){
+      turn++;
+      return;
+    }
         document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[remove])
         document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
         document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+1)
         break;
     case 4:
-        console.log('4 here')
+    if(moveSnakes('RED',currentPostionValue+1,squareDiv) == 1){
+      turn++;
+      return;
+    }
         document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[remove])
         document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
         document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+1)
@@ -398,23 +414,41 @@ function plotSnake(x,y,color,player){
 
 }
 
-function moveSnakesGreen(player,currentPostionValue,squareDiv){
+function moveSnakes(player,currentPostionValue,squareDiv){
   console.log('logs',currentPostionValue)
     if(player == 'GREEN'){
       if(snakeHeadGreen.includes(currentPostionValue)){
         alert("Snake Bite !! You cannot move your current position is "+(currentPostionValue-1))
         console.log("my curr pos",currentPostionValue)
         let pushIndex = snakeHeadGreen.indexOf(currentPostionValue);
-        createEffect(currentPostionValue,pushIndex,squareDiv)
+        createEffect(currentPostionValue,pushIndex,squareDiv,'GREEN')
         return 1;
       }
     }
+
+    if(player == 'RED'){
+      if(snakeHeadRed.includes(currentPostionValue)){
+        alert("Snake Bite !! You cannot move your current position is "+(currentPostionValue-1))
+        console.log("my curr pos",currentPostionValue)
+        let pushIndex = snakeHeadGreen.indexOf(currentPostionValue);
+        createEffect(currentPostionValue,pushIndex,squareDiv,'RED')
+        return 1;
+      }
+    }
+
     return -1;
 }
 
-function createEffect(currentPostion,pushIndex,squareDiv){
-    document.getElementById('g'+currentPostion).appendChild(squareDiv);
-    document.getElementById('g'+currentPostion).
+function createEffect(currentPostion,pushIndex,squareDiv,player){
+  let playerIndex;
+
+    if(player == 'GREEN')
+      playerIndex = 'g';
+    else
+        playerIndex = 'r'
+
+    document.getElementById(playerIndex+currentPostion).appendChild(squareDiv);
+    document.getElementById(playerIndex+currentPostion).s
             removeChild(document.getElementById('g'+currentPostion).childNodes[2])
     console.log("reached here")
 }
