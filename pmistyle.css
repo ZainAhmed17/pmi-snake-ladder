@@ -243,9 +243,11 @@ float: left;
  background: white;
 }
 .dice{
+  height: 50px;
+  width: 50px;
 align-items: center;
  float:left;
- background-color: #2C5364;
+ font-size: 70;
 }
 .rect{
   width: 5px;
