@@ -223,6 +223,8 @@ float: left;
   width: 50px;
   height: 50px;
   float:left;
+  background-image: url("dice_images/dice1.jpg");
+   background-color: #cccccc;
  }
 
 .square{
