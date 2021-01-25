@@ -47,10 +47,10 @@ body{
 
 }
 .red{
- background-color: #dd1818;
+ background-image: linear-gradient(to right, #8e0e00, #fd1c03);
 }
 .green{
- background-color: #45a247;
+ background-image: linear-gradient(to right, #67b26f, #0f9b0f);
 }
 .orange{
   background-color: #F16529;
