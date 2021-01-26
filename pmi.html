@@ -1,38 +1,42 @@
 <html>
  <head>
   <link rel="stylesheet" type="text/css" href="pmistyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  </head>
-<body>
+<body id="body">
   <button style="background-color:#DD5E89;width:100px;height:50px;"><div id="dicePosition">g1</div></button>
   <button style="background-color:#DD5E89;width:100px;height:50px;"><div id="dicePositionRed">r1</div></button>
   <button style="background-color:#DD5E89;width:100px;height:50px;"><div id="currentTurn">GREEN</div></button>
-    <button style="background-color:#DD5E89;width:100px;height:50px;"><div id="snakePlot"></div></button>
+  <h1 class="heading"> PM SNAKES AND LADDERS</h1>
+
 <div class="board">
 <div class="b1">
-  <!--white--><div class="r1c1"></div>
+  <!--white--><div class="r1c1">
+  <div class="goldCoinG" style="font-size:20px"><div id="goldCoinG" style="margin-left: 50%; margin-top: 60%; color:white;"></div></div>
+</div>
   <!--path--><div class="r1c2">
     <div class="c5">
         <!--1st line-->
-    <div class="green" id="g21" >21. Recommended</div>
-    <div class="green" id="g21">20. Need</div>
+    <div class="green" id="g21" >21. RECOMMENDED  </div>
+    <div class="green" id="g20" class="point">20. Need</div>
     <div class="green" id="g19">19</div>
     <div class="green" id="g18">18. Deliver Value</div>
-    <div class="green" id="g17">17. Effective Efficiency</div>
+    <div class="green" id="g17" class="point">17. Effective Efficiency</div>
   </div>
         <div class="c6">
         <!--1st line-->
     <div class="green" id="g22">22. Business Case</div>
     <div class="red" id="r17">17</div>
-    <div class="red" id="r16">16</div>
-    <div class="red" id="r15">15</div>
+    <div class="red" id="r16">16. Lack of clarity on assigned works</div>
+    <div class="red" id="r15">15. No accountabilty of failure</div>
 
   </div>
         <div class="c7">
         <!--1st line-->
     <div class="green" id="g23">23. Accepting</div>
-    <div class="red" id="r18">18</div>
+    <div class="red" id="r18">18. same manager multiple projects</div>
     <div class="red" id="r19">19</div>
-    <div class="red "id="r20">20</div>
+    <div class="red "id="r20">20. timeline shifting</div>
 
   </div>
         <div class="c8">
@@ -44,7 +48,9 @@
     <div class="green" id="g28">28. Prioritize</div>
   </div>
   </div>
-  <!--white--><div class="r1c3"></div>
+  <!--white--><div class="r1c3">
+  <div class="goldCoinR" style="font-size:20px"><div id="goldCoinR" style="margin-left: 50%; margin-top: 60%; color:white;"></div></div>
+</div>
 </div>
 
 <div class="b2">
@@ -57,19 +63,19 @@
        </div>
        <div class="c11">
       <div class="green" id="g13">13. Accountability Principle</div>
-      <div class="red" id="r10">10</div>
-      <div class="red" id="r9">9</div>
+      <div class="red" id="r10">10. Forgetting Stakeholders</div>
+      <div class="red" id="r9">9. manage risks as an when appears</div>
       <div class="green" id="g8">8</div>
        </div>
        <div class="c12">
       <div class="green" id="g14">14. Project Vision</div>
       <div class="red" id="r11">11</div>
-      <div class="red" id="r8">8</div>
+      <div class="red" id="r8">8. No tracking of progress</div>
       <div class="green" id="g7">7. Transparency Principle</div>
        </div>
           <div class="c13">
       <div class="green" id="g15">15</div>
-      <div class="red" id="r12">12</div>
+      <div class="red" id="r12">12. lack of clarity on reporting</div>
       <div class="red" id="r7">7</div>
       <div class="green" id="g6">6. Project Detail</div>
        </div>
@@ -77,25 +83,30 @@
   <!--path--><div class="r2c2">
 <div class="c19">
       <div class="green" id="g16">16. Team Work</div>
-      <div class="red" id="r13"> 13 </div>
-      <div class="red "id="r6"> 6 </div>
+      <div class="red" id="r13"> 13. Milestones not clear </div>
+      <div class="red "id="r6"> 6. No communication with Sponsors  </div>
       <div class="green" id="g5">5. Triple Constraint Principle</div>
        </div>
        <div class="c20">
-      <div class="red "id="r14">14</div>
-      <div class="red" id="r^"> ^ </div>
-      <div class="red" id="r<"> < </div>
-      <div class="red" id="r5">5</div>
+      <div class="red "id="r14">14. Blaming others</div>
+      <div class="red" id="r^"><img src="dice_images/uparrow.png" width="50" height"60"> </div>
+      <div class="red" id="r<"><img src="dice_images/leftarrow.png" width="60" height"50"> </div>
+      <div class="red" id="r5">5. No Decision Power to Project Manager</div>
        </div>
        <div class="c21">
       <div class="red" id="r21">21</div>
-      <div class="red" id="r>"> > </div>
-      <div class="yellow" id="win">win</div>
-      <div class="green" id="g49">49</div>
+      <div class="red" id="r>"><img src="dice_images/rightarrow.png" width="50" height"60"> </div>
+      <div class="yellow" id="win">win
+        <input type="hidden" id="g50" />
+        <input type="hidden" id="g51" />
+        <input type="hidden" id="r30" />
+        <input type="hidden" id="r31" />
+      </div>
+      <div class="green" id="g49">49. Feedback</div>
        </div>
           <div class="c22">
       <div class="green" id="g29"> 29. Tasks</div>
-      <div class="red" id="r22"> 22 </div>
+      <div class="red" id="r22"> 22. team member quiting abruptly </div>
       <div class="red" id="r29">29</div>
       <div class="green" id="g40"> 40. Six Sigma </div>
        </div>
@@ -106,7 +117,7 @@
      <div class="c14">
       <div class="green" id="g30">30</div>
       <div class="red" id="r23">23</div>
-      <div class="red" id="r28">28</div>
+      <div class="red" id="r28">28. Same communication to all Stakeholders</div>
       <div class="green" id="g39">39. PMBOK</div>
 
 </div>
@@ -118,8 +129,8 @@
        </div>
        <div class="c16">
       <div class="green" id="g32">32. Approve</div>
-      <div class="red" id="r25">25</div>
-      <div class="red" id="r26">26</div>
+      <div class="red" id="r25">25. No quality check</div>
+      <div class="red" id="r26">26. Accepting anyone in team</div>
       <div class="green" id="g37">37</div>
        </div>
        <div class="c17">
@@ -148,9 +159,9 @@
   </div>
   <div class="c2">
     <!--2nd line-->
-     <div class="red" id="r4">4</div>
-    <div class="red" id="r3">3</div>
-    <div class="red" id="r2">2</div>
+     <div class="red" id="r4">4 </div>
+    <div class="red" id="r3">3. Unlimited Scope</div>
+    <div class="red" id="r2">2. Fuzzy Goals</div>
     <div class="orange" id="r1">
       <div class="square1" id="whitePawan">
      </div>
@@ -158,7 +169,7 @@
     </div>
     <div class="c3">
     <!--3rd line-->
-     <div class="green" id="g48">48. Feedback </div>
+     <div class="green" id="g48">48 </div>
     <div class="green" id="g47">47. Procurement Management</div>
     <div class="green" id="g46">46. Communication Management</div>
     <div class="green" id="g45">45. Human Resource Management</div>
@@ -175,7 +186,8 @@
 
   </div>
   <!--white--><div class="r3c3">
-  <button  onclick="gamedice()" style="background-color:black;width:100px;height:50px;color:white;">dice</button>
+  <button type="button" onclick="gamedice()" style="background-color:black;width:100px;height:50px;color:white;">dice</button>
+
   </div>
 </div>
 </div>
@@ -185,97 +197,154 @@
 //   var square = document.getElementById("square");
 // }
 var turn = 1;
-var snakeHeadGreen = [8,26,37,49];
+var goldCoinG = 0;
+var goldCoinR = 0;
+var snakeHeadGreen = [8,26,37,48];
 var snakeTailGreen = [7,24,34,45];
-var snakeHeadRed = [5,11,21,24,27,29];
+var snakeHeadRed = [4,11,21,24,27,29];
 var snakeTailRed = [3,8,15,16,20,13];
 var colors = ["blue","white","grey","purple","orage","pink","#00FF00","#99CCFF","#FFCC99"]
+var ladderHeadGreen = [17,21,32,42];
+var ladderTailGreen = [15,19,30,39];
+var ladderHeadRed = [9,19,26];
+var ladderTailRed = [7,17,23];
+var ladderColors = ["pink","#00FF00","#99CCFF","#FFCC99","blue","white","grey","purple","orage"]
+
+
 //Math.floor(Math.random()*6 +1);
  gamedice=()=> {
   //let currentTurn = new XMLSerializer().serializeToString(document.getElementById("currentTurn").firstChild)
-
 let currentTurn = document.getElementById("currentTurn")
 currentTurn.innerHTML = "RED";
 var player = Math.floor(Math.random()*6 +1);
-console.log("dice value",player)
+console.log("player",player)
+console.log("dice_images/dice"+player+".jpg");
+var img = new Image();
+img.src = "dice_images/dice"+player+".jpg";
+img.height = "100";
+img.width = "100";
+img.style.borderRadius = "50px";
+//console.log("dice value",player)
 //var playerdice = "/Users/zainahmed/Desktop/pmi game/dice images/dice`${player}`.jpg";
-console.log(document.getElementById('dice'));
-document.getElementById('dice').innerHTML = player;
+//console.log(document.getElementById('dice'));
+$("#dice").html(img)
 movement(player);
 }
-movement=(player)=>{
+function movement(player){
 	// let squareDiv = document.createElement("DIV");
 	// squareDiv.className = "square"
   // squareDiv.id = "bluePawan"
   // console.log('here1',document.getElementsByClassName("square")[0].parentElement)
   let currentPostion;
+  let currentPostionG;
+  let currentPostionR;
 	let moveValue = defineMoves(player)
-  console.log("current turn",turn)
-  console.log("move values is",moveValue)
+  //console.log("move values is",moveValue)
     if(turn%2==1){
        currentPostion = new XMLSerializer().serializeToString(document.getElementById("dicePosition").firstChild)
+       currentPostionG = currentPostion;
+       if(currentPostionR > 29){
+         alert("GAME OVER... Red Wins!!!!");
+         return;
+       }
       document.getElementById("dicePosition").innerHTML = currentPostion
       let finalPosition  = parseInt(new XMLSerializer().serializeToString(document.getElementById("dicePosition").firstChild).slice(1));
       console.log("finalPosition",finalPosition);
-      if(finalPosition+player > 49){
-        alert("GAME OVER Green");
+      if(finalPosition > 49){
+        alert("GAME OVER... Green Wins!!!!");
         return;
       }
       if(moveValue != -1)
           movePawnGreen(player,currentPostion)
       else {
         turn++;
-        console.log("current turn",document.getElementById("currentTurn"))
+        goldCoinG+=2;
+        document.getElementById("goldCoinG").innerHTML = goldCoinG
+        //console.log("current turn",document.getElementById("currentTurn"))
         document.getElementById("currentTurn").innerHTML="RED"
       }
       }
     else{
        currentPostion = new XMLSerializer().serializeToString(document.getElementById("dicePositionRed").firstChild)
+       currentPostionR = currentPostion
+       if(currentPostionG > 49){
+         alert("GAME OVER... Green Wins!!!!");
+         return;
+       }
       document.getElementById("dicePositionRed").innerHTML = currentPostion
       let finalPosition  = parseInt(new XMLSerializer().serializeToString(document.getElementById("dicePositionRed").firstChild).slice(1));
       console.log("finalPosition",finalPosition);
-      if(finalPosition+player > 29){
-        alert("GAME OVER RED");
+      if(finalPosition > 29){
+        alert("GAME OVER... Red Wins!!!!");
         return;
       }
       if(moveValue != -1)
           movePawnRed(player,currentPostion)
       else {
         turn++;
-        console.log("current turn red",document.getElementById("currentTurn"))
+        goldCoinR+=2;
+        document.getElementById("goldCoinR").innerHTML = goldCoinR
+        //console.log("current turn red",document.getElementById("currentTurn"))
         document.getElementById("currentTurn").innerHTML="GREEN"
       }
     }
 }
 //player,currentPostionValue,squareDiv,currentPostionValueActual
- movePawnGreen=(move,currentPostion)=>{
+function movePawnGreen(move,currentPostion){
   let squareDiv = document.createElement("DIV");
   squareDiv.className = "square"
   squareDiv.id = "bluePawan"
   let currentPostionValue = parseInt(currentPostion.replace(/[^0-9]/g,''));
-  console.log("curr",currentPostionValue);
+  //console.log("curr",currentPostionValue);
 
   let remove;
-  console.log('1 here')
+  let skipSnakeValue;
+  //console.log('1 here')
   if(document.getElementById("g"+(currentPostionValue)).childNodes[1].id != 'bluePawan')
     remove = 2
   else
     remove = 1
   switch (move) {
     case 1:
-      if(moveSnakes('GREEN',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
+      if(moveLadders('GREEN',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
         turn++;
         return;
       }
+       skipSnakeValue = reduceToMove(currentPostionValue+1);
+      if(skipSnakeValue != null && (goldCoinG-skipSnakeValue) < 0){
+        if(moveSnakes('GREEN',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
+          turn++;
+          return;
+        }
+      }
+      if(skipSnakeValue != null && (goldCoinG-skipSnakeValue) >= 0){
+        goldCoinG-=skipSnakeValue;
+        document.getElementById("goldCoinG").innerHTML = goldCoinG;
+      }
+      //console.log("current position 1",currentPostion)
+      //console.log('index made',currentPostion.charAt(0)+(currentPostionValue+1))
       document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue)).childNodes[remove])
       document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
       document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+1);
       break;
     case 2:
-    if(moveSnakes('GREEN',currentPostionValue+2,squareDiv,currentPostionValue)==1){
+    if(moveLadders('GREEN',currentPostionValue+2,squareDiv,currentPostionValue) == 1){
       turn++;
       return;
     }
+    skipSnakeValue = reduceToMove(currentPostionValue+2);
+    if(skipSnakeValue != null && (goldCoinG-skipSnakeValue) < 0){
+      if(moveSnakes('GREEN',currentPostionValue+2,squareDiv,currentPostionValue) == 1){
+        turn++;
+        return;
+      }
+    }
+    if(skipSnakeValue != null && (goldCoinG-skipSnakeValue) >= 0){
+      goldCoinG-=skipSnakeValue;
+      document.getElementById("goldCoinG").innerHTML = goldCoinG;
+    }
+    //console.log("current position 1",currentPostion)
+    //console.log('index made',currentPostion.charAt(0)+(currentPostionValue+1))
     let posDice = currentPostion.charAt(0)+(currentPostionValue+2);
     document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue))
                               .childNodes[remove])
@@ -283,10 +352,27 @@ movement=(player)=>{
       document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+2)
         break;
     case 3:
+    skipSnakeValue = reduceToMove(currentPostionValue-1);
+    if(skipSnakeValue != null && (goldCoinG-skipSnakeValue) < 0){
+      if(moveSnakes('GREEN',currentPostionValue-1,squareDiv,currentPostionValue) == 1){
+        turn++;
+        return;
+      }
+    }
+    if(skipSnakeValue != null && (goldCoinG-skipSnakeValue) >= 0){
+      goldCoinG-=skipSnakeValue;
+      document.getElementById("goldCoinG").innerHTML = goldCoinG;
+    }
+    if(moveLadders('GREEN',currentPostionValue-1,squareDiv,currentPostionValue) == 1){
+      turn++;
+      return;
+    }
     if(moveSnakes('GREEN',currentPostionValue-1,squareDiv,currentPostionValue) == 1){
       turn++;
       return;
     }
+    //console.log("current position 1",currentPostion)
+    //console.log('index made',currentPostion.charAt(0)+(currentPostionValue+1))
         if(currentPostion == 'g1')
               return;
         document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue)).childNodes[remove])
@@ -294,20 +380,42 @@ movement=(player)=>{
         document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue-1)
       break;
     case 5:
+    skipSnakeValue = reduceToMove(currentPostionValue+1);
+    goldCoinG+=1;
+    document.getElementById("goldCoinG").innerHTML = goldCoinG
+    if(skipSnakeValue != null && (goldCoinG-skipSnakeValue) < 0){
+      if(moveSnakes('GREEN',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
+        turn++;
+        return;
+      }
+    }
+    if(skipSnakeValue != null && (goldCoinG-skipSnakeValue) >= 0){
+      goldCoinG-=skipSnakeValue;
+      document.getElementById("goldCoinG").innerHTML = goldCoinG;
+    }
+    if(moveLadders('GREEN',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
+      turn++;
+      return;
+    }
     if(moveSnakes('GREEN',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
       turn++;
       return;
     }
-
+    //console.log("current position 1",currentPostion)
+    //console.log('index made',currentPostion.charAt(0)+(currentPostionValue+1))
+        console.log("current position and val ",currentPostion,currentPostionValue)
         document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue)).childNodes[remove])
         document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
         document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+1)
         break;
     case 4:
-    if(moveSnakes('GREEN',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
+    if(moveLadders('GREEN',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
       turn++;
       return;
     }
+
+    //console.log("current position 1",currentPostion)
+    //console.log('index made',currentPostion.charAt(0)+(currentPostionValue+1))
         document.getElementById("g"+(currentPostionValue)).removeChild(document.getElementById("g"+(currentPostionValue)).childNodes[remove])
         document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
         document.getElementById("dicePosition").innerHTML = "g"+(currentPostionValue+1)
@@ -319,7 +427,7 @@ movement=(player)=>{
   currentTurn.innerHTML = "RED";
   turn++;
 }
- movePawnRed=(move,currentPostion)=>{
+function movePawnRed(move,currentPostion){
   let squareDiv = document.createElement("DIV");
   squareDiv.className = "square1"
   squareDiv.id = "whitePawan"
@@ -331,9 +439,22 @@ movement=(player)=>{
     remove = 1
   switch (move) {
     case 1:
-    if(moveSnakes('RED',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
+    if(moveLadders('RED',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
       turn++;
       return;
+    }
+    skipSnakeValue = reduceToMove(currentPostionValue+1);
+    console.log("skipSnakeValue ",skipSnakeValue)
+    console.log("total value ", (goldCoinR-skipSnakeValue))
+    if(skipSnakeValue != null && (goldCoinR-skipSnakeValue) < 0){
+      if(moveSnakes('RED',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
+        turn++;
+        return;
+      }
+    }
+    if(skipSnakeValue != null && (goldCoinR-skipSnakeValue) >= 0){
+      goldCoinR-=skipSnakeValue;
+      document.getElementById("goldCoinR").innerHTML = goldCoinR;
     }
       document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[remove])
       document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
@@ -343,9 +464,23 @@ movement=(player)=>{
       //.parentElement.firstChild)
       break;
     case 2:
-    if(moveSnakes('RED',currentPostionValue+2,squareDiv,currentPostionValue) == 1){
+    if(moveLadders('RED',currentPostionValue+2,squareDiv,currentPostionValue) == 1){
       turn++;
       return;
+    }
+    skipSnakeValue = reduceToMove(currentPostionValue+2);
+    console.log("skipSnakeValue ",skipSnakeValue)
+    console.log("total value ", (goldCoinR-skipSnakeValue))
+    if(skipSnakeValue != null && (goldCoinR-skipSnakeValue) < 0){
+      console.log("snake bite")
+      if(moveSnakes('RED',currentPostionValue+2,squareDiv,currentPostionValue) == 1){
+        turn++;
+        return;
+      }
+    }
+    if(skipSnakeValue != null && (goldCoinR-skipSnakeValue) >= 0){
+      goldCoinR-=skipSnakeValue;
+      document.getElementById("goldCoinR").innerHTML = goldCoinR;
     }
     let posDice = currentPostion.charAt(0)+(currentPostionValue+2);
     document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue))
@@ -354,9 +489,23 @@ movement=(player)=>{
       document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+2)
         break;
     case 3:
-    if(moveSnakes('RED',currentPostionValue-1,squareDiv,currentPostionValue) == 1){
+    if(moveLadders('RED',currentPostionValue-1,squareDiv,currentPostionValue) == 1){
       turn++;
       return;
+    }
+    skipSnakeValue = reduceToMove(currentPostionValue-1);
+    console.log("skipSnakeValue ",skipSnakeValue)
+    console.log("total value ", (goldCoinR-skipSnakeValue))
+    if(skipSnakeValue != null && (goldCoinR-skipSnakeValue) < 0){
+      console.log("snike bite")
+      if(moveSnakes('RED',currentPostionValue-1,squareDiv,currentPostionValue) == 1){
+        turn++;
+        return;
+      }
+    }
+    if(skipSnakeValue != null && (goldCoinR-skipSnakeValue) >= 0){
+      goldCoinR-=skipSnakeValue;
+      document.getElementById("goldCoinR").innerHTML = goldCoinR;
     }
         if(currentPostion == 'r1')
               return;
@@ -365,16 +514,32 @@ movement=(player)=>{
         document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue-1)
       break;
     case 5:
-    if(moveSnakes('RED',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
+    goldCoinR+=1;
+    document.getElementById("goldCoinR").innerHTML = goldCoinR
+    if(moveLadders('RED',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
       turn++;
       return;
+    }
+    skipSnakeValue = reduceToMove(currentPostionValue+1);
+    console.log("skipSnakeValue ",skipSnakeValue)
+    console.log("total value ", (goldCoinR-skipSnakeValue))
+    if(skipSnakeValue != null && (goldCoinR-skipSnakeValue) < 0){
+      console.log("snike bite")
+      if(moveSnakes('RED',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
+        turn++;
+        return;
+      }
+    }
+    if(skipSnakeValue != null && (goldCoinR-skipSnakeValue) >= 0){
+      goldCoinR-=skipSnakeValue;
+      document.getElementById("goldCoinR").innerHTML = goldCoinR;
     }
         document.getElementById("r"+(currentPostionValue)).removeChild(document.getElementById("r"+(currentPostionValue)).childNodes[remove])
         document.getElementById(currentPostion.charAt(0)+(currentPostionValue+1)).appendChild(squareDiv);
         document.getElementById("dicePositionRed").innerHTML = "r"+(currentPostionValue+1)
         break;
     case 4:
-    if(moveSnakes('RED',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
+    if(moveLadders('RED',currentPostionValue+1,squareDiv,currentPostionValue) == 1){
       turn++;
       return;
     }
@@ -391,27 +556,35 @@ movement=(player)=>{
   turn++;
 }
 
- createSnake=(times,player)=>{
+function createSnake(times,player){
 
   for(let j = 0;j<times;j++){
     if(player == 'GREEN')
-        plotSnake(snakeHeadGreen[j],snakeTailGreen[j],colors[j],player)
+        plotSnake(snakeHeadGreen[j],snakeTailGreen[j],colors[j],player,j)
     else
-        plotSnake(snakeHeadRed[j],snakeTailRed[j],colors[j],player)
+        plotSnake(snakeHeadRed[j],snakeTailRed[j],colors[j],player,j)
   }
 
 }
 
- plotSnake=(x,y,color,player)=>{
+function plotSnake(x,y,color,player,i){
   let snakeH = document.createElement("DIV");
+  let path;
   snakeH.className = "snake"
-  snakeH.innerHTML = "H"
-  snakeH.style.background = color;
+//  snakeH.style.background = color;
+  let snakeImgG = document.createElement("IMG");
+  path = "dice_images/snakes/s"+(i+1)+".png";
+  snakeImgG.setAttribute("src",path)
+  snakeH.appendChild(snakeImgG);
+  snakeImgG.style.cssFloat = "right";
   let snakeT = document.createElement("DIV");
   snakeT.className = "snake"
-  snakeT.innerHTML = "T"
-  snakeT.style.background = color;
-
+//  snakeT.style.background = color;
+  let snakeImgR = document.createElement("IMG");
+  path = "dice_images/snakes/t"+(i+1)+".png";
+  snakeImgR.setAttribute("src",path)
+  snakeT.appendChild(snakeImgR);
+  snakeImgR.style.cssFloat = "right";
   let box;
 
   if(player == 'GREEN')
@@ -419,21 +592,18 @@ movement=(player)=>{
   else
       box = 'r'
 
-  console.log('checking',box+x)
   document.getElementById(box+x).appendChild(snakeH)
   document.getElementById(box+y).appendChild(snakeT)
 
 }
 
- moveSnakes=(player,currentPostionValue,squareDiv,currentPostionValueActual)=>{
+function moveSnakes(player,currentPostionValue,squareDiv,currentPostionValueActual){
   let pushToIndex;
-  console.log('logs',currentPostionValue)
     if(player == 'GREEN'){
       if(snakeHeadGreen.includes(currentPostionValue)){
-        alert("Snake Bite !! You cannot move your current position is "+(currentPostionValue-1))
-        console.log("my curr pos",currentPostionValue)
         let pushIndex = snakeHeadGreen.indexOf(currentPostionValue);
         pushToIndex = snakeTailGreen[pushIndex]
+        alert("Snake Bite !! You cannot move your current position is "+(snakeTailGreen[pushIndex]))
         createEffect(currentPostionValueActual,pushToIndex,squareDiv,'GREEN')
         return 1;
       }
@@ -441,10 +611,9 @@ movement=(player)=>{
 
     if(player == 'RED'){
       if(snakeHeadRed.includes(currentPostionValue)){
-        alert("Snake Bite !! You cannot move your current position is "+(currentPostionValue-1))//to change
-        console.log("my curr pos",currentPostionValue)
         let pushIndex = snakeHeadRed.indexOf(currentPostionValue);
         pushToIndex = snakeTailRed[pushIndex];
+        alert("Snake Bite !! You cannot move your current position is "+(snakeTailRed[pushIndex]))
         createEffect(currentPostionValueActual,pushToIndex,squareDiv,'RED')
         return 1;
       }
@@ -453,7 +622,36 @@ movement=(player)=>{
     return -1;
 }
 
- createEffect=(currentPostionValueActual,pushToIndex,squareDiv,player)=>{
+function reduceToMove(currentIndex){
+//var snakeHeadRed = [5,11,21,24,27,29];
+  switch (currentIndex) {
+    case 8:
+        return 4;
+    case 26:
+        return 8;
+    case 37:
+        return 12;
+    case 48:
+        return 20;
+    case 4:
+        return 4;
+    case 11:
+        return 8;
+    case 21:
+        return 12;
+    case 27:
+        return 24;
+    case 29:
+        return 30;
+    case 24:
+        return 16;
+    default:
+      return null;
+  }
+
+}
+
+function createEffect(currentPostionValueActual,pushToIndex,squareDiv,player){
 
   let playerIndex;
   let currentPosUpdate;
@@ -467,7 +665,6 @@ movement=(player)=>{
       currentPosUpdate = "dicePositionRed";
     }
     let currentMoveIndex = playerIndex+pushToIndex
-    console.log("player index",(playerIndex+pushToIndex))
 
     let zainSnake = document.getElementById(playerIndex+currentPostionValueActual).childNodes[1]
 
@@ -480,11 +677,118 @@ movement=(player)=>{
     document.getElementById(playerIndex+currentPostionValueActual).
             removeChild(document.getElementById(playerIndex+currentPostionValueActual).childNodes[removalIndex])
     document.getElementById(currentPosUpdate).innerHTML = currentMoveIndex;
-    console.log("current Position value actual",currentPostionValueActual)
+    //console.log("current Position value actual",currentPostionValueActual)
+}
+
+function createladder(times,player){
+
+  for(let j = 0;j<times;j++){
+    if(player == 'GREEN')
+        plotLadder(ladderTailGreen[j],ladderHeadGreen[j],ladderColors[j],player,j)
+    else
+        plotLadder(ladderTailRed[j],ladderHeadRed[j],ladderColors[j],player,j)
+  }
+
+}
+
+function plotLadder(x,y,color,player,i){
+  let ladderT = document.createElement("DIV");
+  let pathL;
+  ladderT.className = "ladder"
+  let ladderImgG = document.createElement("IMG");
+  pathL = "dice_images/ladders/ladder"+(i+1)+".png";
+  ladderImgG.setAttribute("src",pathL)
+  ladderT.appendChild(ladderImgG);
+  ladderImgG.style.cssFloat = "right";
+  ladderT.style.background = color;
+  ladderImgG.style.height = "30";
+  ladderImgG.style.width = "30";
+
+  let ladderH = document.createElement("DIV");
+  ladderH.className = "ladder"
+  ladderH.style.background = color;
+  let ladderImgR = document.createElement("IMG");
+  pathL = "dice_images/ladders/ladder"+(i+1)+".png";
+  ladderImgR.setAttribute("src",pathL)
+  ladderH.appendChild(ladderImgR);
+  ladderImgR.style.cssFloat = "right";
+  ladderImgR.style.height = "30";
+  ladderImgR.style.width = "30";
+
+  let box;
+
+  if(player == 'GREEN')
+      box = 'g';
+  else
+      box = 'r'
+
+  //console.log('checking',box+x)
+  document.getElementById(box+x).appendChild(ladderT)
+  document.getElementById(box+y).appendChild(ladderH)
+
+}
+
+function moveLadders(player,currentPostionValue,squareDiv,currentPostionValueActual){
+  let pushToIndex;
+  //console.log('logs',currentPostionValue)
+    if(player == 'GREEN'){
+      if(ladderTailGreen.includes(currentPostionValue)){
+        //alert("Snake Bite !! You cannot move your current position is "+(currentPostionValue+1))
+        //console.log("my curr pos",currentPostionValue)
+        let pushIndex = ladderTailGreen.indexOf(currentPostionValue);
+        pushToIndex = ladderHeadGreen[pushIndex]
+        createEffectLadder(currentPostionValueActual,pushToIndex,squareDiv,'GREEN')
+        return 1;
+      }
+    }
+
+    if(player == 'RED'){
+      if(ladderTailRed.includes(currentPostionValue)){
+        //alert("Snake Bite !! You cannot move your current position is "+(currentPostionValue+1))//to change
+        //console.log("my curr pos",currentPostionValue)
+        let pushIndex = ladderTailRed.indexOf(currentPostionValue);
+        pushToIndex = ladderHeadRed[pushIndex];
+        createEffectLadder(currentPostionValueActual,pushToIndex,squareDiv,'RED')
+        return 1;
+      }
+    }
+
+    return -1;
+}
+
+function createEffectLadder(currentPostionValueActual,pushToIndex,squareDiv,player){
+
+  let playerIndex;
+  let currentPosUpdate;
+  let removalIndex;
+    if(player == 'GREEN'){
+      playerIndex = 'g';
+      currentPosUpdate = "dicePosition"
+    }
+    else{
+      playerIndex = 'r'
+      currentPosUpdate = "dicePositionRed";
+    }
+    let currentMoveIndex = playerIndex+pushToIndex
+    //console.log("player index",(playerIndex+pushToIndex))
+
+    let rahulLadder = document.getElementById(playerIndex+currentPostionValueActual).childNodes[1]
+
+    if(rahulLadder.id == 'bluePawan' || rahulLadder.id == 'whitePawan')
+        removalIndex = 1;
+    else
+          removalIndex = 2;
+    //console.log("my ladder index",(playerIndex+currentPostionValueActual))
+    document.getElementById(playerIndex+pushToIndex).appendChild(squareDiv);
+    document.getElementById(playerIndex+currentPostionValueActual).
+            removeChild(document.getElementById(playerIndex+currentPostionValueActual).childNodes[removalIndex])
+    document.getElementById(currentPosUpdate).innerHTML = currentMoveIndex;
+    //console.log("current Position value actual",currentPostionValueActual)
 }
 
 
- defineMoves=(move)=>{
+
+function defineMoves(move){
   if(move == 1 || move == 3 || move == 5)
       return 1;
 
@@ -495,6 +799,27 @@ movement=(player)=>{
 }
 createSnake(4,'GREEN')
 createSnake(6,'RED')
+createladder(4,'GREEN')
+createladder(3,'RED')
+
+// function populateSnakeAndLadders(){
+//   var g20 = $('#g20');
+//   var g17 = $('#g17');
+//   var imageLadder = new Image();
+//   imageLadder.src = "dice_images/ladder.jpg";
+//   imageLadder.width = 100;
+//   imageLadder.height = 100;
+//   var x1 = g20.offset().left + (g20.width()/2);
+//   var y1 = g20.offset().top + (g20.height()/2);
+//   var x2 = g17.offset().left + (g17.width()/2);
+//   var y2 = g17.offset().top + (g17.height()/2);
+//   imageLadder.width = x1 - x2 + 20;
+//   imageLadder.height = y1 + y2;
+//   imageLadder.style.zIndex = 10000;
+//   g20.append(imageLadder);
+//
+// }
+
 </script>
 </body>
 </html>

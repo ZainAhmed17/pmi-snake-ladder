@@ -17,6 +17,10 @@ body{
    width: 900px;
    height: 300px;
    display: flex;
+   font-size: 8;
+   font-weight: bold;
+   float: bottom;
+   text-transform: uppercase;
  }
  .r1c1,.r1c3,.r3c1,.r3c3{
    width: 300px;
@@ -218,34 +222,42 @@ float: left;
 
 
  }
-
+/*
  .snake{
-  width: 50px;
-  height: 50px;
-  float:left;
-  background-image: url("dice_images/dice1.jpg");
+  width: 25px;
+  height: 25px;
+  border-radius: 25%;
+  float:right;
    background-color: #cccccc;
- }
-
+   background-image: url(dice_images/dice1.jpg) !important;
+ } */
 .square{
- width: 50px;
- height: 50px;
+ width: 25px;
+ height: 45px;
  float:left;
  /* background: blue; */
- background-image: url("dice_images/player1.png");
- background-color: #cccccc;
+ background-image: url("dice_images/yellowpawn.png");
 }
-
+.heading{
+font-family: COPPERPLATE;
+text-align:center;
+color: #00008B;
+font-weight: bold;
+font-size: 60;
+}
 .square1{
- width: 5px;
- height: 5px;
+ width: 25px;
+ height: 45px;
  float:left;
- background: white;
+ background-image: url("dice_images/bluepawn.png");
+
 }
 .dice{
+  height: 50px;
+  width: 50px;
 align-items: center;
  float:left;
- background-color: #2C5364;
+ font-size: 70;
 }
 .rect{
   width: 5px;
@@ -273,4 +285,63 @@ align-items: center;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+.goldCoinG{
+  background-image: url("dice_images/greencoin.png");
+  width: 150;
+  height: 150;
+  float:left;
+  z-index: 0;
+
+}
+.goldCoinR{
+  background-image: url("dice_images/redcoin.png");
+  width: 150;
+  height: 150;
+  float:left;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: lightblue;
+  color: black;
+  text-align: center;
+  border-radius: 60px;
+  padding: 15px 15px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+#svg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#line{
+  stroke-width:2px;
+  stroke:rgb(0,0,0);
+}
+
+.point{
+  width: 10px;
+  height: 10px;
+  background: red;
+  position: absolute;
 }
